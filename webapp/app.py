@@ -16,6 +16,7 @@ def hello():
         message = f.readlines()[-20:]
     return f"Hello from: {ip} on: {hostname}." + '<br>' + '<p><a href="https://peer2profit.com/r/1629477772611fdb8cab06c" rel="noopener noreferrer" target="_blank">Check it</a></p>' + '<br>'.join(message)
 
-
+def ip():
+    return f"{get('https://api.ipify.org').text}"
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
