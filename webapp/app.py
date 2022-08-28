@@ -15,7 +15,7 @@ def hello():
     with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "test.log")) as f:
         message = f.readlines()[-20:]
     return f"Hello from: {ip} on: {hostname}." + '<br>' + '<p><a href="https://peer2profit.com/r/1629477772611fdb8cab06c" rel="noopener noreferrer" target="_blank">Check it</a></p>' + '<br>'.join(message)
-
+@app.rout("/ip")
 def ip():
     return f"{get('https://api.ipify.org').text}"
 if __name__ == '__main__':
