@@ -1,7 +1,5 @@
 {
 	"name": "peer2profit",
-	"description": "Deploy peer2profit on Heroku.",
-	"keywords": ["peer2profit"],
 	"env": {
 		"EMAIL": {
 			"description": "peer2profit email",
@@ -9,7 +7,6 @@
             "required": true
 		}
 	},
-	"website": "https://github.com/Chasing66/peer2profit",
-	"repository": "https://github.com/Chasing66/peer2profit-heroku",
+	"repository": "https://github.com/codewithap/peer2profit-heroku",
 	"stack": "container"
 }
