@@ -20,12 +20,8 @@ if not os.path.exists(p2p_client_path):
     os.chmod(p2p_client_path, 0o755)
     print('p2pclient is installed.')
 email = os.environ.get('EMAIL', None)
-if email is None:
-    print('EMAIL environment variable is not set. Please set it to your email address.')
-    exit(1)
 cmd = f'nohup {p2p_client_path} -l {email} >> {p2p_log_path} 2>&1 &'
 # run cmd and wait for it to finish
-out, err = subprocess.Popen(
+out = subprocess.Popen(
     cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
 print(out.decode('utf-8'))
-print(err.decode('utf-8'))
