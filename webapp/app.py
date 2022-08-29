@@ -1,13 +1,10 @@
 import os
 import socket
 import subprocess
-
 from flask import Flask
 from requests import get
 
 app = Flask(__name__)
-
-
 @app.route('/')
 def hello():
     hostname = socket.gethostname()
