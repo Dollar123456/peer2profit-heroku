@@ -1,18 +1,14 @@
 import os
 import subprocess
-
 import requests
 current_dir = os.path.dirname(os.path.abspath(__file__))
-
 p2p_client_path = "/usr/bin/p2pclient"
 p2p_log_path = os.path.join(current_dir, "test.log")
 
 ip = requests.get('https://api.ipify.org').text
-
 # check whether p2pclient is under path /usr/bin/
 if not os.path.exists(p2p_client_path):
     print('p2pclient is not installed. Download it from github.')
-    # download p2pclient binary from github via requests
     r = requests.get(
         'https://raw.githubusercontent.com/Chasing66/peer2profit/main/p2pclient')
     with open(p2p_client_path, 'wb') as f:
